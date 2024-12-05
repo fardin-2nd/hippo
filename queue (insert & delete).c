@@ -64,6 +64,19 @@ void qdelete()
     }
 }
 
+void peek()
+{
+    // Check if the queue is empty
+    if (front == -1)
+    {
+        printf("The queue is empty. Nothing to peek.\n");
+        return;
+    }
+
+    // Display the front element
+    printf("The front element is: %d\n", queue[front]);
+}
+
 void display()
 {
     if (front == -1)
@@ -99,16 +112,21 @@ int main()
 
     display();
 
+    peek(); // Display the front element
+
     qdelete();
     qdelete();
     qdelete();
 
     display();
 
+    peek(); // Display the front element after deletions
+
     qdelete();
     qdelete();
     qdelete(); // Attempt to delete from an empty queue
 
+    peek(); // Peek into an empty queue
+
     return 0;
 }
-
